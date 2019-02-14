@@ -2,3 +2,7 @@
 This is a sample project base on Unity Roll Ball tutorial (https://unity3d.com/learn/tutorials/s/roll-ball-tutorial).
 I will extend this tutorial project by adding more features.
 
+#### Dev Log:
+
+##### 2019/02/14 -  Sweet Start
+- Setting up the game
