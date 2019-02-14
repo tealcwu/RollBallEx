@@ -9,4 +9,5 @@ I will extend this tutorial project by adding more features.
 - Moving the player
 - Moving the camera
 - Setting up the play area
-- Creating collectable objects
+- Creating and collecting collectable objects
+- Displaying the score and text
