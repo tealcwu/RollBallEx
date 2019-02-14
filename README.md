@@ -6,3 +6,4 @@ I will extend this tutorial project by adding more features.
 
 ##### 2019/02/14 -  Sweet Start
 - Setting up the game
+- Moving the player
