@@ -11,3 +11,4 @@ I will extend this tutorial project by adding more features.
 - Setting up the play area
 - Creating and collecting collectable objects
 - Displaying the score and text
+- Add the enemy objects (score -2 when the player collides with the enemy)

@@ -38,6 +38,13 @@ public class PlayerController : MonoBehaviour
             score++;
             setScoreText();
         }
+        else if(other.gameObject.CompareTag("enemy"))
+        {
+            other.gameObject.SetActive(false);
+
+            score-=2;
+            setScoreText();
+        }
     }
 
     // set score text and wintext
