@@ -4,6 +4,9 @@ I will extend this tutorial project by adding more features.
 
 #### Dev Log:
 
+##### 2019/02/15
+- Player can jump over the other objects (by press Space bar)
+
 ##### 2019/02/14 -  Sweet Start
 - Setting up the game
 - Moving the player

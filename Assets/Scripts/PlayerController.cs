@@ -26,6 +26,12 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxis("Vertical");
 
         rb.AddForce(new Vector3(horizontal, 0, vertical) * Speed);
+
+        // player jump by press Space bar
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(new Vector3(0, 30, 0) * Speed);
+        }
     }
 
     // collision event handler
