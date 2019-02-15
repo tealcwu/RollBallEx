@@ -6,6 +6,7 @@ I will extend this tutorial project by adding more features.
 
 ##### 2019/02/15
 - Player can jump over the other objects (by press Space bar)
+- Destroy objects when player collides with them
 
 ##### 2019/02/14 -  Sweet Start
 - Setting up the game

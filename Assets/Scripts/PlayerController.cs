@@ -39,14 +39,16 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("pickup"))
         {
-            other.gameObject.SetActive(false);
+            // other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
 
             score++;
             setScoreText();
         }
         else if(other.gameObject.CompareTag("enemy"))
         {
-            other.gameObject.SetActive(false);
+            // other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
 
             score-=2;
             setScoreText();
