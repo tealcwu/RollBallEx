@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float Speed;
     public Text ScoreText;
     public Text WinText;
+    public GameObject AudioDirector;
 
     // Use this for initialization
     void Start()
@@ -17,6 +18,7 @@ public class PlayerController : MonoBehaviour
         // reset score and wintext
         setScoreText();
         WinText.text = "";
+        
     }
 
     // Update is called once per frame
@@ -39,18 +41,20 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("pickup"))
         {
-            // other.gameObject.SetActive(false);
             Destroy(other.gameObject);
 
+            // play sound
+            AudioDirector.GetComponent<AudioDirector>().PlayGlassBreak1();
             score++;
             setScoreText();
         }
         else if(other.gameObject.CompareTag("enemy"))
         {
-            // other.gameObject.SetActive(false);
             Destroy(other.gameObject);
 
-            score-=2;
+            // play sound
+            AudioDirector.GetComponent<AudioDirector>().PlayGlassBreak2();
+            score -=2;
             setScoreText();
         }
     }
