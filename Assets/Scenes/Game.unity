@@ -1069,6 +1069,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}
   m_IsPrefabAsset: 0
@@ -1240,6 +1250,16 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}
   m_IsPrefabAsset: 0
@@ -1318,6 +1338,16 @@ Prefab:
     - target: {fileID: 4403490992594678, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}
       propertyPath: m_LocalScale.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}
@@ -1907,6 +1937,7 @@ MonoBehaviour:
   ScoreText: {fileID: 558427419}
   WinText: {fileID: 2042576790}
   AudioDirector: {fileID: 2133562543}
+  JumpThreshold: 50
 --- !u!1 &2133562543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2099,6 +2130,21 @@ Prefab:
     - target: {fileID: 4403490992594678, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}
       propertyPath: m_LocalScale.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 0.9999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 65091415116928182, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f,
+        type: 2}
+      propertyPath: m_Center.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c2f7d9af4b56a94a82ee2f12cebe51f, type: 2}

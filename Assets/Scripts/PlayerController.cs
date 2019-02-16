@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Text ScoreText;
     public Text WinText;
     public GameObject AudioDirector;
+    public float JumpThreshold = 50;
 
     // Use this for initialization
     void Start()
@@ -18,7 +19,6 @@ public class PlayerController : MonoBehaviour
         // reset score and wintext
         setScoreText();
         WinText.text = "";
-        
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         // player jump by press Space bar
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            rb.AddForce(new Vector3(0, 30, 0) * Speed);
+            rb.AddForce(new Vector3(0, JumpThreshold, 0) * Speed);
         }
     }
 
