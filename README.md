@@ -4,6 +4,9 @@ I will extend this tutorial project by adding more features.
 
 #### Dev Log:
 
+##### 2019/02/16
+- Add jump animation to enemy object
+
 ##### 2019/02/15
 - Player can jump over the other objects (by press Space bar)
 - Destroy objects when player collides with them
