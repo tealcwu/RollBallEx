@@ -4,6 +4,9 @@ I will extend this tutorial project by adding more features.
 
 #### Dev Log:
 
+##### 2019/02/17
+- Add Speed Ratio
+
 ##### 2019/02/16
 - Add jump animation to enemy object
 - Update colliders of walls to make sure the ball cannot jump over the walls

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float Speed;
     public Text ScoreText;
     public Text WinText;
+    public Text SpeedText;
     public GameObject AudioDirector;
     public float JumpThreshold = 50;
 
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
             // play sound
             AudioDirector.GetComponent<AudioDirector>().PlayGlassBreak1();
             score++;
+            Speed++;
             setScoreText();
         }
         else if(other.gameObject.CompareTag("enemy"))
@@ -55,6 +57,7 @@ public class PlayerController : MonoBehaviour
             // play sound
             AudioDirector.GetComponent<AudioDirector>().PlayGlassBreak2();
             score -=2;
+            Speed--;
             setScoreText();
         }
     }
@@ -63,6 +66,7 @@ public class PlayerController : MonoBehaviour
     private void setScoreText()
     {
         ScoreText.text = "Score: " + score.ToString();
+        SpeedText.text = "Speed Ratio: " + Speed.ToString();
 
         if (score >= 3)
         {
