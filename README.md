@@ -4,6 +4,9 @@ I will extend this tutorial project by adding more features.
 
 #### Dev Log:
 
+##### 2019/02/19
+- Spawn enemies randomly
+
 ##### 2019/02/18
 - Spawn pickups randomly
 
