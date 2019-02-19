@@ -6,6 +6,7 @@ I will extend this tutorial project by adding more features.
 
 ##### 2019/02/19
 - Spawn enemies randomly
+- Spawn pickups and enemies in an unique position
 
 ##### 2019/02/18
 - Spawn pickups randomly

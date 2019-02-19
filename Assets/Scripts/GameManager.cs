@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     // enemy root object
     GameObject enemyRoot;
 
+    List<Vector3> objectPositionList = new List<Vector3>();
+
     // Use this for initialization
     void Start()
     {
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
             float z = Random.Range(-9, 9);
 
             // instantiate pickup object
-            GameObject newPickup = Instantiate(PickupPrefab, new Vector3(x, y, z), Quaternion.identity);
+            GameObject newPickup = Instantiate(PickupPrefab, GetUniquePosition(PickupPrefab.transform.position), Quaternion.identity);
 
             // add new pickup to root
             newPickup.transform.parent = pickupRoot.transform;
@@ -57,15 +59,29 @@ public class GameManager : MonoBehaviour
         // generate random enemies
         for(int i=0;i<EnemiesCount;i++)
         {
-            float x = Random.Range(-9, 9);
-            float y = EnemyPrefab.transform.position.y;
-            float z = Random.Range(-9, 9);
+            
 
             // instantiate enemy object
-            GameObject newEnemy = Instantiate(EnemyPrefab, new Vector3(x, y, z), Quaternion.identity);
+            GameObject newEnemy = Instantiate(EnemyPrefab, GetUniquePosition(EnemyPrefab.transform.position), Quaternion.identity);
 
             // add new enemy to root
             newEnemy.transform.parent = enemyRoot.transform;
         }
+    }
+
+    Vector3 GetUniquePosition(Vector3 original)
+    {
+        float x = Random.Range(-9, 9);
+        float y = original.y;
+        float z = Random.Range(-9, 9);
+
+        Vector3 newPos = new Vector3(x, y, z);
+
+        if(objectPositionList.Contains(newPos))
+        {
+            newPos = GetUniquePosition(original);
+        }
+
+        return newPos;
     }
 }
