@@ -4,6 +4,15 @@ This is an extension project base on Unity Roll a Ball tutorial (https://learn.u
 
 Dev Log:
 
+**2023/08/13 - Scenes Manager**
+
+Add Start/Settings/Store scenes and navigate between them.
+
+* [New] Add new scenes.
+* [New] Add replay function.
+
+
+
 **2023/08/13 - Jump**
 
 Add new Input Action to handle jump by pressing Space bar.
@@ -21,7 +30,8 @@ Add new Input Action to handle jump by pressing Space bar.
 
 
 
-##### 2023/08/13 - Sweet Start
+**2023/08/13 - Sweet Start**
+
 Initial version, same as Unity's tutorial project.
 * [New] Moving player with Input System
 * [New] Camera follow with player

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     // Text to show game result
     public TextMeshProUGUI ResultText;
 
+    public GameObject ResultPanel;
+
     private Rigidbody rb;
     private float movementX;
     private float movementY;
@@ -108,14 +110,14 @@ public class PlayerController : MonoBehaviour
         if (score > 3)
         {
             ResultText.text = "You Win!";
-            ResultText.gameObject.SetActive(true);
+            ResultPanel.SetActive(true);
             isGameOver = true;
         }
 
         if (score < 0)
         {
             ResultText.text = "You Lose!";
-            ResultText.gameObject.SetActive(true);
+            ResultPanel.SetActive(true);
             isGameOver = true;
         }
     }

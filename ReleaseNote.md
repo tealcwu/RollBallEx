@@ -1,5 +1,16 @@
 ## **RollBallEx Release Note**
 
+#### V0.4
+
+2023/08/13 23:33
+
+Add Start/Settings/Store scenes and navigate between them.
+
+* [New] Add new scenes.
+* [New] Add replay function.
+
+
+
 #### V0.3
 
 2023/08/13 21:10
