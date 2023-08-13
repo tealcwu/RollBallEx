@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI ScoreText;
 
     // Text to show game result
-    public GameObject ResultText;
+    public TextMeshProUGUI ResultText;
 
     private Rigidbody rb;
     private float movementX;
@@ -57,6 +57,13 @@ public class PlayerController : MonoBehaviour
             score++;
             SetText();
         }
+
+        if(other.CompareTag("Enemy"))
+        {
+            other.gameObject.SetActive(false);
+            score -= 2;
+            SetText();
+        }
     }
 
     /// <summary>
@@ -66,9 +73,16 @@ public class PlayerController : MonoBehaviour
     {
         ScoreText.text = "SCORE:" + score.ToString();
 
-        if(score > 5)
+        if(score > 3)
         {
-            ResultText.SetActive(true);
+            ResultText.text = "You Win!";
+            ResultText.gameObject.SetActive(true);
+        }
+
+        if(score < 0)
+        {
+            ResultText.text = "You Lose!";
+            ResultText.gameObject.SetActive(true);
         }
     }
 }
