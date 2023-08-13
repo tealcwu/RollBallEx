@@ -1,5 +1,16 @@
 ## **RollBallEx Release Note**
 
+
+
+#### V0.2
+
+2023/08/13 17:30
+
+* [New] Add new enemy role. The score decrease by 2 when player collides with enemy.
+* [New] Add SpawnManager, to generate pickups and enemies in random positions.
+
+
+
 #### V0.1
 
 2023/08/13 14:50
