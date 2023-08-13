@@ -4,7 +4,17 @@ This is an extension project base on Unity Roll a Ball tutorial (https://learn.u
 
 Dev Log:
 
-**2023/08/13 - SpawnManager
+**2023/08/13 - Jump**
+
+Add new Input Action to handle jump by pressing Space bar.
+
+* [New] Add basket ball texture to player ball, in order to show it's rolling.
+* [New] Add collision handler when the player collides with pickup.
+* [New] Add custom jump Input Action to player.
+
+
+
+**2023/08/13 - SpawnManager**
 
 * [New] Add new enemy role. The score decrease by 2 when player collides with enemy.
 * [New] Add SpawnManager, to generate pickups and enemies in random positions.

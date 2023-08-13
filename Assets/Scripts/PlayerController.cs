@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,11 +17,36 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
     private float score;
+    private bool isGameOver = false;
+
+    private MyInputActions controls;
+    private InputAction jumpAction;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+    }
+    private void Awake()
+    {
+        controls = new MyInputActions();
+        jumpAction = controls.Player.Jump;
+        controls.Player.Jump.performed += context =>Jump_performed();
+    }
+
+    private void OnEnable()
+    {
+        jumpAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        jumpAction.Disable();
+    }
+
+    private void Jump_performed()
+    {
+        rb.AddForce(Vector3.up * Speed / 2, ForceMode.Impulse);
     }
 
     // Update is called once per frame
@@ -50,19 +73,28 @@ public class PlayerController : MonoBehaviour
     /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("PickUp"))
+        if (!isGameOver)
         {
-            // deactive the pickup collied with player
-            other.gameObject.SetActive(false);
-            score++;
-            SetText();
+            if (other.CompareTag("Enemy"))
+            {
+                other.gameObject.SetActive(false);
+                score -= 2;
+                SetText();
+            }
         }
+    }
 
-        if(other.CompareTag("Enemy"))
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(!isGameOver)
         {
-            other.gameObject.SetActive(false);
-            score -= 2;
-            SetText();
+            if (collision.gameObject.CompareTag("PickUp"))
+            {
+                // deactive the pickup collied with player
+                collision.gameObject.SetActive(false);
+                score++;
+                SetText();
+            }
         }
     }
 
@@ -73,16 +105,18 @@ public class PlayerController : MonoBehaviour
     {
         ScoreText.text = "SCORE:" + score.ToString();
 
-        if(score > 3)
+        if (score > 3)
         {
             ResultText.text = "You Win!";
             ResultText.gameObject.SetActive(true);
+            isGameOver = true;
         }
 
-        if(score < 0)
+        if (score < 0)
         {
             ResultText.text = "You Lose!";
             ResultText.gameObject.SetActive(true);
+            isGameOver = true;
         }
     }
 }
