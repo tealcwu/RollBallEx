@@ -1,5 +1,17 @@
 ## **RollBallEx Release Note**
 
+#### V0.5
+
+2023/08/14 22:05
+
+Add background music and sound effects.
+
+* [New] Add background music in game scene.
+* [New] Add different sound effects when player collides with pickup and enemy.
+* [New] Add sound effect when clicking UI buttons.
+
+
+
 #### V0.4
 
 2023/08/13 23:33

@@ -4,6 +4,16 @@ This is an extension project base on Unity Roll a Ball tutorial (https://learn.u
 
 Dev Log:
 
+**2023/08/14 - Sound Effects**
+
+Add background music and sound effects.
+
+* [New] Add background music in game scene.
+* [New] Add different sound effects when player collides with pickup and enemy.
+* [New] Add sound effect when clicking UI buttons.
+
+
+
 **2023/08/13 - Scenes Manager**
 
 Add Start/Settings/Store scenes and navigate between them.

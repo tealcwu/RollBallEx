@@ -5,24 +5,50 @@ using UnityEngine.SceneManagement;
 
 public class UIEventManager : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void PlaySound()
+    {
+        audioSource.Play();
+    }
+
+    private void ChangeScene(string sceneName)
+    {
+        PlaySound();
+        StartCoroutine(WaitAndLoadScene(sceneName));
+    }
+
+    private IEnumerator WaitAndLoadScene(string sceneName)
+    {
+        yield return new WaitForSeconds(audioSource.clip.length);
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void OnPlayButtonClicked()
     {
+        PlaySound();
         SceneManager.LoadScene("GameScene");
+
     }
 
     public void OnSettingsButtonClicked()
     {
-        SceneManager.LoadScene("SettingsScene");
+        ChangeScene("SettingsScene");
     }
 
     public void OnStoreButtonClicked()
     {
-        SceneManager.LoadScene("StoreScene");
+        ChangeScene("StoreScene");
     }
 
     public void BacktoMenuClicked()
     {
-        SceneManager.LoadScene("StartScene");
+        ChangeScene("StartScene");
     }
 
     public void ReplayButtonClicked()
@@ -31,6 +57,6 @@ public class UIEventManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         // reload the scene
-        SceneManager.LoadScene(currentScene.name);
+        ChangeScene(currentScene.name);
     }
 }
