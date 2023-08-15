@@ -4,6 +4,17 @@ This is an extension project base on Unity Roll a Ball tutorial (https://learn.u
 
 Dev Log:
 
+**2023/08/15 - Audio Manager**
+
+Add audio manager in setting page, to control BGM and sound effect volume and On/Off.
+
+* [New] Update setting page, add toggle and slider to control audio settings.
+* [New] Save audio status and volume in PlayerPrefs, load them when starting.
+* [New] Add AudioManager to control all audio sources.
+* [New] Play background music across all scenes now.
+
+
+
 **2023/08/14 - Sound Effects**
 
 Add background music and sound effects.
@@ -33,7 +44,7 @@ Add new Input Action to handle jump by pressing Space bar.
 
 
 
-**2023/08/13 - SpawnManager**
+**2023/08/13 - Spawn Manager**
 
 * [New] Add new enemy role. The score decrease by 2 when player collides with enemy.
 * [New] Add SpawnManager, to generate pickups and enemies in random positions.

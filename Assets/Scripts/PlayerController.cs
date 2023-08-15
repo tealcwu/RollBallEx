@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
 
     public GameObject ResultPanel;
 
-    public AudioClip pickupSound;
-    public AudioClip enemySound;
-
     private Rigidbody rb;
     private float movementX;
     private float movementY;
@@ -27,13 +24,10 @@ public class PlayerController : MonoBehaviour
     private MyInputActions controls;
     private InputAction jumpAction;
 
-    private AudioSource audioSource;
-
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
     }
     private void Awake()
     {
@@ -85,8 +79,8 @@ public class PlayerController : MonoBehaviour
         {
             if (other.CompareTag("Enemy"))
             {
-                audioSource.clip = enemySound;
-                audioSource.Play();
+                // play enemy sound
+                AudioManager.Instance.SoundEffectSources[2].Play();
                 other.gameObject.SetActive(false);
                 score -= 2;
                 SetText();
@@ -101,8 +95,7 @@ public class PlayerController : MonoBehaviour
             if (collision.gameObject.CompareTag("PickUp"))
             {
                 // deactive the pickup collied with player
-                audioSource.clip = pickupSound;
-                audioSource.Play();
+                AudioManager.Instance.SoundEffectSources[1].Play();
 
                 collision.gameObject.SetActive(false);
                 score++;

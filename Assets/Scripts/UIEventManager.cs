@@ -9,17 +9,17 @@ public class UIEventManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-
-    private void PlaySound()
-    {
-        audioSource.Play();
+        audioSource = AudioManager.Instance.SoundEffectSources[0];
     }
 
     private void ChangeScene(string sceneName)
     {
-        PlaySound();
+        bool isSoundEffectOn = PlayerPrefs.GetInt("SoundEffectIsOn", 1) == 1 ? true : false;
+        if(isSoundEffectOn)
+        {
+            audioSource.Play();
+        }
+        
         StartCoroutine(WaitAndLoadScene(sceneName));
     }
 
@@ -31,9 +31,7 @@ public class UIEventManager : MonoBehaviour
 
     public void OnPlayButtonClicked()
     {
-        PlaySound();
-        SceneManager.LoadScene("GameScene");
-
+        ChangeScene("GameScene");
     }
 
     public void OnSettingsButtonClicked()
@@ -57,6 +55,7 @@ public class UIEventManager : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
 
         // reload the scene
+        audioSource = AudioManager.Instance.SoundEffectSources[0];
         ChangeScene(currentScene.name);
     }
 }

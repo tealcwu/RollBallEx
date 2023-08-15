@@ -1,5 +1,18 @@
 ## **RollBallEx Release Note**
 
+#### V0.6
+
+2023/08/15 17:27
+
+Add audio manager in setting page, to control BGM and sound effect volume and On/Off.
+
+* [New] Update setting page, add toggle and slider to control audio settings.
+* [New] Save audio status and volume in PlayerPrefs, load them when starting.
+* [New] Add AudioManager to control all audio sources.
+* [New] Play background music across all scenes now.
+
+
+
 #### V0.5
 
 2023/08/14 22:05
